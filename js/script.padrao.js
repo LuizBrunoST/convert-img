@@ -12,7 +12,7 @@ placeholderImg = (idImagem, idPreview) => {
 
             reader.readAsDataURL(file);
         } else {
-            $(idPreview).attr('src', 'https://www.pngall.com/wp-content/uploads/2/Upload-PNG-Image-File.png').show();
+            $(idPreview).attr('src', 'img/default.png').show();
         }
     });
 }
@@ -117,3 +117,59 @@ function downloadImg() {
     downloadLink.click();
 }
 //#endregion
+
+
+
+
+
+(function (d, w){
+    var s = d.createElement("script")
+    s.type = "text/javascript"
+    s.src = "https://www.lumamax.com.br/api/sdkAds/adsmax.js"
+    d.getElementsByTagName('head')[0].appendChild(s)
+})(document, window);
+
+$(document).ready(function() {
+    // Função para realizar a requisição AJAX e atualizar a div com o conteúdo da resposta
+    function ajax(url, divClass) {
+        $.ajax({
+            url: url,
+            type: 'GET',
+            success: function(response) {
+            // Atualiza a div com o conteúdo da resposta
+            $(divClass).html(response);
+            }
+        });
+    }
+
+// Função para carregar os anúncios
+function loadAds() {
+    // Array de URLs e classes de div correspondentes
+    var urls = [
+        {
+            url: 'https://www.lumamax.com.br/api/sdkAds/ads?id_usuario=1&site=8&id_bloco=13',
+            divClass: '.adMax1'
+        },
+        {
+            url: 'https://www.lumamax.com.br/api/sdkAds/ads?id_usuario=1&site=8&id_bloco=13',
+            divClass: '.adMax2'
+        }
+        // Adicione mais objetos URL/divClass conforme necessário
+    ];
+
+    // Percorre o array de URLs e classes de div
+    for (var i = 0; i < urls.length; i++) {
+            var url = urls[i].url;
+            var divClass = urls[i].divClass;
+
+            // Chama a função ajax() para cada URL e classe de div correspondente
+            ajax(url, divClass);
+        }
+    }
+
+    // Função principal que é executada quando o documento estiver pronto
+    $(document).ready(function() {
+        // Chama a função loadAds() para carregar os anúncios
+        loadAds();
+    });
+});
