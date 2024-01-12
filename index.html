@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de imagem</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/manifest.json">
+    <meta name="msapplication-TileColor" content="#2196F3">
+    <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+    <meta name="theme-color" content="#2196F3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css">
+    <link rel="stylesheet" href="css/estilo.padrao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.29.0/js/canvas-to-blob.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/progressbar.js@1.0.1/dist/progressbar.min.js"></script>
+</head>
+<body>
+    <div class="w3-display-bottomleft w3-display-bottomleft w3-block w3-padding w3-margin-bottom" id="msgbox" style="z-index:5;position: fixed;"></div>
+
+    <section class="w3-content" style="margin-bottom:40px;">
+        <header class="w3-bar w3-blue">
+            <div class="w3-row">
+                <div class="w3-col s6">
+                    <select class="w3-text-blue w3-select w3-block" id="outputFormat">
+                        <option value="png">PNG</option>
+                        <option value="jpeg">JPEG</option>
+                        <option value="jfif">JFIF</option>
+                        <option value="jpg">JPG</option>
+                        <option value="webp">WEBP</option>
+                    </select>
+                </div>
+                <div class="w3-col s6">
+                    <button class="w3-button w3-block" onclick="convertImage()"><i class="fa-solid fa-rotate"></i> Converter</button>
+                </div>
+            </div>
+        </header>
+        <div class="w3-row">
+            <div class="w3-third">
+                <section class="w3-container w3-margin-top">
+                    <label for="inputImage">
+                        <img class="w3-card-4 w3-round-large w3-border" src="https://www.pngall.com/wp-content/uploads/2/Upload-PNG-Image-File.png" alt="Preview" title="Preview (clique aqui para fazer upload)" id="imagemPreview" style="width: 100%;">
+                    </label>
+                    <input type="file" id="inputImage" accept="image/*" style="display:none;">
+                </section>
+            </div>
+
+            <div class="w3-third" style="display:none" id="resultImgOrigianlView">
+                <div class="w3-container w3-margin-top">
+                    <img class="w3-card-4 w3-round-large w3-border" id="originalImage" style="width: 100%;"><br><br>
+                </div>
+            </div>
+            <div class="w3-third" id="resultImgView" style="display:none">
+                <div class="w3-container w3-margin-top">
+                    <div id="progress-container"></div>
+                    <img class="w3-card-4 w3-round-large w3-border" id="convertedImage" style="width: 100%;"><br><br>
+                    <a class="w3-button w3-block w3-blue" id="downloadLink" style="display: none;" download="converted_image"><i class="fa-solid fa-download"></i> Baixar</a>
+                    <button onclick="downloadImg()" style="display: none;">Baixar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="w3-dark-grey w3-bar w3-block" style="position:fixed;bottom:0;">
+        <span class="w3-bar-item w3-opacity">Direitos reservados &copy; <a href="https://www.lumamax.com.br/" target="_blank">LUMAMAX.COM.BR</a> </span>
+    </footer>
+    <script src="js/toast.class.js"></script>
+    <script src="js/script.padrao.js"></script>
+</body>
+</html>
