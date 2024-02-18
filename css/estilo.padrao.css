@@ -1,0 +1,10 @@
+body {font-size: 15pt;}
+html,body,h1,h2,h3,h4,h5,h6{font-family:Verdana, Geneva, Tahoma, sans-serif;}
+.w3-font-bold{font-weight: bold;}
+
+
+/* Estilo do scrollbar */
+::-webkit-scrollbar {width: 5px;height:5px;}
+::-webkit-scrollbar-track {box-shadow: inset 0 0 5px grey; }
+::-webkit-scrollbar-thumb {background: #2196F3;}
+::-webkit-scrollbar-thumb:hover {background: #186bae;}
