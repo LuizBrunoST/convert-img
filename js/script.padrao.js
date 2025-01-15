@@ -125,7 +125,7 @@ function downloadImg() {
 (function (d, w){
     var s = d.createElement("script")
     s.type = "text/javascript"
-    s.src = "https://www.lumamax.com.br/api/sdkAds/adsmax.js"
+    s.src = "https://lumamax.com.br/api/sdkAds/adsmax.js"
     d.getElementsByTagName('head')[0].appendChild(s)
 })(document, window);
 
@@ -147,11 +147,11 @@ function loadAds() {
     // Array de URLs e classes de div correspondentes
     var urls = [
         {
-            url: 'https://www.lumamax.com.br/api/sdkAds/ads?id_usuario=1&site=8&id_bloco=13',
+            url: 'https://lumamax.com.br/api/sdkAds/ads?id_usuario=1&site=11&id_bloco=23',
             divClass: '.adMax1'
         },
         {
-            url: 'https://www.lumamax.com.br/api/sdkAds/ads?id_usuario=1&site=8&id_bloco=13',
+            url: 'https://lumamax.com.br/api/sdkAds/ads?id_usuario=1&site=11&id_bloco=23',
             divClass: '.adMax2'
         }
         // Adicione mais objetos URL/divClass conforme necessário
